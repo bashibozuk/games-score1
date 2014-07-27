@@ -82,7 +82,7 @@ class Application
 		} elseif (method_exists($controllerInstance, 'notFound')) {
 			call_user_func_array(array($controllerInstance , $actionName), $get);
 		} else {
-			throw new Exception('Action not found');
+			throw new \Exception('Action not found');
 		}
 		
 		if (method_exists($controllerInstance, 'after' . ucfirst(self::$action))) {
@@ -110,7 +110,7 @@ class Application
 	
 	public static function getResourseUrl($r)
 	{
-		return self::getSetting(self::BASE_URL) .'public/' . $r;
+		return self::getSetting(self::BASE_URL) .'web/' . $r;
 	}
 	
 	public static function isCli()

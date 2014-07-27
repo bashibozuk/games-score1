@@ -10,7 +10,7 @@ spl_autoload_register(function($class)
 
 Application::init(array(
 	Application::BASE_PATH => dirname(__FILE__) . '/application',
-	Application::BASE_URL => 'http://localhost/smvc/',
+	Application::BASE_URL => 'http://localhost/games-score/',
 ));
 
 Application::run();

@@ -68,7 +68,10 @@ class Controller
 	
 	public function notFound($die = true)
 	{
-		header('HTTP/1.0 404 Not Found');
+        if (!Application::isCli()) {
+            header('HTTP/1.0 404 Not Found');
+        }
+
 		echo  'Route ', ArrayHelper::getFromArray($_GET, 'route'), ' can not be resolved', PHP_EOL;
 		$die && Application::end();
 	}

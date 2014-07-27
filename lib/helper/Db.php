@@ -1,5 +1,6 @@
 <?php
 namespace lib\helper;
+use PDO;
 
 class Db
 {
@@ -60,7 +61,7 @@ class Db
 	
 	public static function getDateTime($ts = null)
 	{
-		return date('Y-m-d H:i:s', $ts ? $ts : time());
+		return date('Y-m-d H:i:s', $ts ?: time());
 	}
 	
 	public static function delete($table , $condition, $bind = array(), $connection = 'default')
